@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/3163782288_3426102576_1958448905.mp4'
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/1495979052_4180579860_635400906.mp4'
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/1495979052_143131406_1726459466.mp4'
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/1495979052_4180579860_1645323250.mp4'
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/1495979052_3890199673_1507426828.mp4'
+file 'file:C:/Users/Faisal/Desktop/manim-master/media/videos/manimce/480p15/partial_movie_files/OpeningManim/1495979052_4180579860_1312434549.mp4'
