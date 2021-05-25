@@ -1,4 +1,3 @@
-
 from manim_imports_ext import *
 
 
@@ -87,10 +86,6 @@ class TrigRepresentationsScene(Scene):
             end_point = (1./np.sin(self.theta_value))*self.unit_length*UP
         return Line(start_point, end_point, color = color)
 
-
-
-
-
 class IntroduceCSC(TrigRepresentationsScene):
     def construct(self):
         self.clear()
@@ -101,86 +96,40 @@ class IntroduceCSC(TrigRepresentationsScene):
         of_theta[0].set_color(YELLOW)
         CSC.move_to(csc, DOWN)
 
-
         csc_line = self.get_trig_line("csc")
         csc_line.set_stroke(width = 8)
         cot_line = self.get_trig_line("cot")
         cot_line.set_color(WHITE)
         brace = Brace(csc_line, LEFT)
 
-        
-        self.play(
-            ShowCreation(self.axes),
-            ShowCreation(self.circle),)
+        # self.play(Write(Cam_S_C))
+        # self.wait()
+        # self.play(Transform(Cam_S_C, CSC))
+        # self.wait()
+        # self.play(Transform(Cam_S_C, csc))
+        # self.remove(Cam_S_C)
+        # self.add(csc)
+        # self.play(Write(of_theta))
+        # self.wait(2)
 
-
+        csc_of_theta.add_to_back(BackgroundRectangle(csc))
+        # self.play(
+        #     ShowCreation(self.axes),
+        #     ShowCreation(self.circle),
+        #     GrowFromCenter(brace),            
+        #     csc_of_theta.rotate, np.pi/2,
+        #     csc_of_theta.next_to, brace, LEFT,
+        #     path_arc = np.pi/2,
+        #     run_time = 20
+        # )
         self.wait(4)
         self.play(Write(self.theta_group, run_time = 1))
         self.play(ShowCreation(cot_line))
-
         self.play(
             ShowCreation(csc_line),
             csc.set_color, csc_line.get_color(),
         )
+        self.wait(3)
 
 
-
-class ExplainTrigFunctionDistances(TrigRepresentationsScene):
-    CONFIG = {
-        "use_morty" : False,
-        "alt_theta_val" : 2*np.pi/5,
-    }
-    def setup(self):
-       
-        TrigRepresentationsScene.setup(self)
-
-    def construct(self):
-        self.introduce_angle()
-        # self.show_sine_and_cosine()
-        # self.show_tangent_and_cotangent()
-        # self.show_secant_and_cosecant()
-        # self.explain_cosecant()
-        # self.summarize_full_group()
-
-    def introduce_angle(self):
-        self.remove(self.circle)
-        self.remove(self.theta_group)
-        line, arc, theta, dot = self.theta_group
-        line.rotate(-self.theta_value)
-        brace = Brace(line, UP, buff = SMALL_BUFF)
-        one = brace.get_text("1", buff = SMALL_BUFF)
-        VGroup(line, brace, one).rotate(self.theta_value)
-        one.rotate(-self.theta_value)
-        self.circle.rotate(self.theta_value)
-
-        words = TexText("Corresponding point")
-        words.next_to(dot, UP+RIGHT, buff = 1.5*LARGE_BUFF)
-        words.shift_onto_screen()
-        arrow = Arrow(words.get_bottom(), dot, buff = SMALL_BUFF)
-
-        self.play(
-            ShowCreation(line),
-            ShowCreation(arc),
-        )
-        self.play(Write(theta))
-        # self.play(self.pi_creature.change_mode, "pondering")
-        self.play(
-            ShowCreation(self.circle),
-            Rotating(line, rate_func = smooth, in_place = False),
-            run_time = 2
-        )
-        self.play(
-            Write(words),
-            ShowCreation(arrow),
-            ShowCreation(dot)
-        )
-        self.wait()
-        self.play(
-            GrowFromCenter(brace),
-            Write(one)
-        )
-        self.wait(2)
-        self.play(*list(map(FadeOut, [
-            words, arrow, brace, one
-        ])))
-        self.radial_line_label = VGroup(brace, one)
+      

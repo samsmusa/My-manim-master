@@ -164,6 +164,8 @@ class IntroduceCSC(TrigRepresentationsScene):
             csc_of_theta.next_to, brace, LEFT,
             path_arc = np.pi/2,
         )
+
+        self.wait(3)
         self.play(Write(self.theta_group, run_time = 1))
         self.play(ShowCreation(cot_line))
         self.play(
